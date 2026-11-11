@@ -159,6 +159,14 @@ your-project/
 └── FIDELITY.md       ← the report card
 ```
 
-## License
+## ⚖️ Responsible use
+
+Clone Anything is for **learning, prototyping, and reskinning what you have rights to** — not for passing a copy off as someone else's site or shipping their logo/brand as your own. The skill already swaps brand assets for neutral placeholders by default. Full details in **[DISCLAIMER.md](DISCLAIMER.md)** — read it before publishing anything public.
+
+## 🤝 Contributing
+
+Found it failing on a site? Have an agent we don't cover? Ideas to make the loop tighter? **[Open an issue](https://github.com/kingenious0/clone-anything/issues)** or send a PR — see **[CONTRIBUTING.md](CONTRIBUTING.md)** for the rules of the house (kid-friendly README, agent-precise SKILL.md, and: *no score, no "done"* — even in PRs).
+
+## 📄 License
 
 [MIT](LICENSE) — copy it, fork it, remix it. That's the whole point. 🧬
