@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="55%" stop-color="#101728"/>
+      <stop offset="100%" stop-color="#160f2b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c5cff"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="stamp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="420" fill="url(#bg)"/>
+  <rect width="1200" height="420" fill="url(#grid)"/>
+
+  <!-- corner frame -->
+  <g stroke="url(#accent)" stroke-width="3" fill="none" opacity="0.9">
+    <path d="M24 64 L24 24 L64 24"/>
+    <path d="M1136 24 L1176 24 L1176 64"/>
+    <path d="M1176 356 L1176 396 L1136 396"/>
+    <path d="M64 396 L24 396 L24 356"/>
+  </g>
+
+  <!-- title -->
+  <text x="70" y="130" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="1">CLONE <tspan fill="url(#accent)">ANYTHING</tspan></text>
+  <text x="72" y="172" font-size="22" fill="#9fb0c9">Give your AI agent a URL, APK, EXE, or screenshots — get a faithful copy.</text>
+
+  <!-- pipeline chips -->
+  <g font-size="17" font-weight="700" text-anchor="middle">
+    <g>
+      <rect x="70" y="220" width="185" height="54" rx="12" fill="#7c5cff" fill-opacity="0.16" stroke="#7c5cff" stroke-width="1.5"/>
+      <text x="162" y="245" fill="#c4b5fd">① EXTRACT</text>
+      <text x="162" y="264" font-size="12" font-weight="400" fill="#9fb0c9">tokens · routes · screens</text>
+    </g>
+    <path d="M262 247 L292 247" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#a)"/>
+    <g>
+      <rect x="300" y="220" width="185" height="54" rx="12" fill="#38bdf8" fill-opacity="0.14" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="392" y="245" fill="#7dd3fc">② BUILD</text>
+      <text x="392" y="264" font-size="12" font-weight="400" fill="#9fb0c9">boring stack · mock data</text>
+    </g>
+    <path d="M492 247 L522 247" stroke="#38bdf8" stroke-width="2.5"/>
+    <g>
+      <rect x="530" y="220" width="185" height="54" rx="12" fill="#f59e0b" fill-opacity="0.14" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="622" y="245" fill="#fcd34d">③ DIFF</text>
+      <text x="622" y="264" font-size="12" font-weight="400" fill="#9fb0c9">original vs clone</text>
+    </g>
+    <path d="M722 247 L752 247" stroke="#38bdf8" stroke-width="2.5"/>
+    <g>
+      <rect x="760" y="220" width="185" height="54" rx="12" fill="#34d399" fill-opacity="0.14" stroke="#34d399" stroke-width="1.5"/>
+      <text x="852" y="245" fill="#6ee7b7">④ SCORE</text>
+      <text x="852" y="264" font-size="12" font-weight="400" fill="#9fb0c9">iterate until ≥85%</text>
+    </g>
+    <path d="M952 247 L982 247" stroke="#38bdf8" stroke-width="2.5"/>
+    <g>
+      <rect x="990" y="220" width="140" height="54" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5"/>
+      <text x="1060" y="245" fill="#ffffff">⑤ REPORT</text>
+      <text x="1060" y="264" font-size="12" font-weight="400" fill="#9fb0c9">proof, not claims</text>
+    </g>
+  </g>
+
+  <!-- score stamp -->
+  <g transform="translate(70,310)" filter="url(#glow)">
+    <rect width="330" height="70" rx="14" fill="url(#stamp)" fill-opacity="0.18" stroke="#34d399" stroke-width="2"/>
+    <text x="20" y="32" font-size="26" font-weight="800" fill="#6ee7b7">94/100 ✅ VERIFIED</text>
+    <text x="20" y="56" font-size="14" fill="#9fb0c9">fidelity report card — no score, no “done”</text>
+  </g>
+
+  <!-- agents line -->
+  <text x="1130" y="352" font-size="15" text-anchor="end" fill="#9fb0c9">works with: OpenCode · Claude Code · Cursor · Antigravity · any agent</text>
+  <text x="1130" y="376" font-size="15" text-anchor="end" fill="#55647d">Phase 1: surface clone  ·  Phase 2: backend (opt-in)  ·  Remix mode: “but change X”</text>
+</svg>

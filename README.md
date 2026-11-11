@@ -1,114 +1,151 @@
-# 🧬 Clone Anything
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Works with any agent](https://img.shields.io/badge/works%20with-any%20AI%20agent-7c5cff.svg)](INSTALL.md)
+[![Proves fidelity](https://img.shields.io/badge/fidelity-proven%20%F0%9F%93%8A-brightgreen.svg)](examples/FIDELITY.md)
+[![GitHub stars](https://img.shields.io/github/stars/kingenious0/clone-anything?style=flat&label=star)](https://github.com/kingenious0/clone-anything/stargazers)
 
-**Give your AI agent a website or app, and it builds you a copy — then checks its own work to prove the copy actually matches the original.**
+<h1 align="center">🧬 Clone Anything</h1>
 
-It works with any AI coding assistant: OpenCode, Claude Code, Cursor, Antigravity, and others.
+<p align="center"><b>Give your AI agent a website or app — it builds you a copy,<br>then <i>proves</i> the copy matches the original with a scored report card.</b></p>
+
+<p align="center">
+  <img src="assets/hero.svg" alt="Clone Anything pipeline: extract, build, diff, score, report" width="100%">
+</p>
+
+<p align="center">Works with <b>OpenCode · Claude Code · Cursor · Antigravity</b> — any agent that reads Markdown.</p>
 
 ---
 
-## What does it do?
+## 😵 The problem
 
-You know how you can say *"clone this website"* to an AI and it builds… something? The problem is, nobody checks if the copy actually looks like the real thing. The AI just says *"Done! It's perfect!"* — and sometimes it isn't.
+You say *"clone this website"* to an AI. It builds… **something**. Then it says:
 
-This skill fixes that with one simple rule:
+> *"Done! It's perfect!"*
 
-> **The AI must PROVE it looks right — by taking pictures of both, comparing them side by side, and showing you a score.**
+…without ever checking. Sometimes it's actually perfect. Sometimes the font is wrong, two pages are missing, and the colors are off. **You have no way to know.**
 
-No score, no "done."
+## ✅ The one rule
 
-## The 3 phases
+> **No score, no "done."**
 
-Think of it like copying a drawing in art class:
+The agent must take pictures of the real site and its copy, **compare them side by side**, and hand you a report card with actual numbers. Claims are free — scores aren't.
 
-**Phase 0 — Study the original**
-First, look carefully at what you're copying. What colors does it use? What fonts? What pages does it have? Write it all down in a one-page plan.
+## 🎬 How it works
 
-**Phase 1 — Copy it, then check your work**
-
-1. **Take "before" pictures** of the real site (every page, on computer and phone screen sizes)
-2. **Build the copy** using the same colors and fonts you found
-3. **Take "after" pictures** of your copy
-4. **Compare the pictures** — the computer scores how close each page is, out of 100
-5. **Fix the worst pages** and check again — until most pages score at least **85/100**
-
-Then you get a **report card**, like this:
-
-```
-HOW CLOSE IS THE COPY?
-
-  Home page     94/100  ⭐ Great
-  Pricing page  87/100  ⭐ Great
-  Checkout      82/100  👀 Almost — header is a bit off
-  Profile       71/100  👀 Needs work — not enough reference photos
-
-  Overall: 83.5 / 100
+```mermaid
+flowchart LR
+    A["🌐 URL"] --> E
+    B["📱 APK file"] --> E
+    C["🖥️ EXE file"] --> E
+    D["🖼️ Screenshots"] --> E
+    E["① Study the original<br>(colors, fonts, pages)"] --> F["② Build the copy<br>(fake data inside)"]
+    F --> G["③ Photograph the copy<br>(same screen sizes)"]
+    G --> H{"④ How close\nis it?"}
+    H -->|"under 85"| F
+    H -->|"85 or more"| I["⑤ Report card 🎉"]
 ```
 
-You always know exactly where the copy stands — no guessing, no fake "it looks perfect!"
+The loop keeps going — fixing the worst pages first — until most pages score **85/100 or better**. Then you get:
 
-**Phase 2 — Make it actually work (optional)**
-The first copy runs on *fake sample data* (like a movie set — looks real, nothing behind the walls). If you want the copy to have real accounts, real data, or a real database, you say the word and it builds that too. **It never does this without asking you first.**
+<p align="center"><img src="assets/report-card.svg" alt="Example fidelity report card scoring pages out of 100" width="85%"></p>
 
-## What can you copy from?
+**Three phases:**
 
-| You give it… | It uses… |
-|---|---|
-| 🌐 A **website link** | The site's own colors, fonts, and pages |
-| 📱 An **Android app file** (.apk) | The app's real color list and screens |
-| 🖥️ A **computer program** (.exe) | The actual code inside (if it's the common kind) |
-| 🖼️ **Screenshots** | The pictures you gave it |
-| ✏️ Just **the app's name** | It searches the web for what the app looks like |
+| Phase | What happens | When |
+|-------|-------------|------|
+| **0 — Study** | Look at the original, write a one-page plan (max 5 pages in v1) | Always |
+| **1 — Copy & check** | The loop above → report card | Always |
+| **2 — Make it real** | Swap the fake data for a real database, logins, APIs | **Only if you ask** |
 
-You can even combine them — more clues = a better copy.
+## 🧰 What can you copy from?
 
-## "Can you make it different too?"
+| You give it… | It reads… | How good is that? |
+|---|---|---|
+| 🌐 **Website link** | Every page's colors, fonts, buttons, layout | ⭐⭐⭐ High |
+| 📱 **Android app** (.apk) | The app's *real* color list, text, and screen list | ⭐⭐⭐ High |
+| 🖥️ **Computer program** (.exe) | If it's the common kind — the **actual code inside** | ⭐⭐⭐ Highest |
+| 🖥️ **EXE** (other kinds) | Icons, text, any web links it contains | ⭐⭐ Medium |
+| 🖼️ **Screenshots** | Colors, fonts, and layout read from the images | ⭐⭐ Medium |
+| 🎥 **Screen recording** | Pages *and* how they move | ⭐⭐ Medium |
+| ✏️ **Just a name** ("clone Airbnb") | Searches the web for what it looks like, then starts | ⭐⭐ Medium |
 
-Yes! That's **remix mode**:
+**Combine them** (APK + screenshots + store page) and it gets even closer — more clues = better copy.
 
-1. First it builds an **exact copy** and saves it
-2. *Then* it applies your changes — *"make it green," "call it Finlytics," "different logo"*
-3. Every change is saved as its own step, so you can **undo any single one** and go back to the original look
+## 🍳 Recipes — just say one of these
 
-The exact copy is always just one command away.
+**1️⃣ Clone a landing page**
+> *"Clone this site: https://example.com"*
 
-## What if something breaks or we take a break?
+Studies it → builds it → scores every page → report card. Works even while you watch.
 
-This skill comes with good habits built in, so the project never falls apart:
+**2️⃣ Clone a mobile app from its APK**
+> *"Here's the APK for <app> — build me a web version"*
 
-- **It always tests before saying "done"** — and shows you what it ran 🧪
-- **It saves a checkpoint every time something works** 📸 — one bad edit can never ruin your project, you can always go back
-- **It keeps a "where were we" note** 📝 — so tomorrow's session reads it and picks up right where it left off
-- **It knows when to stop and think** 🧠 — if the same thing fails 3 times in a row, instead of trying random fixes, it rolls back to the last working version and asks you before continuing
+The APK contains the app's real colors and screen list, so the copy starts from truth, not guesses.
 
-## Honest limitations (no lying allowed)
+**3️⃣ Copy it, but rebrand it**
+> *"Clone stripe.com, but make it green and call it Finlytics"*
 
-- The **look and feel** gets copied (pages, buttons, colors, layout) — with **fake data** inside
-- The **brain behind the site** (the real database, logins, payments) can't be read from a link — that's Phase 2, only if you ask
-- Don't publish a copy with someone else's **logo or brand name** — the skill swaps in neutral placeholders to keep you out of trouble
+First: an **exact copy**, saved. *Then* your changes, each saved as its own step — undo any single one and the original look comes right back.
 
-## Install it (pick your assistant)
+**4️⃣ Rescue a dying build** *(works on any project, clone or not)*
+> *"(mid-project) It keeps breaking" / "where were we?"*
 
-The whole skill is just one file: **[SKILL.md](./SKILL.md)**
+The built-in rescue habits kick in — see below.
 
-| Your AI assistant | Put the file here |
+## 🛟 Why the build never falls apart
+
+Every clone (and any project using this skill) follows four habits:
+
+- 🧪 **Tests before "done"** — every claim comes with the command output that proves it
+- 📸 **A save point every time something works** — one bad edit can never ruin your project; one command brings back the last working version
+- 📝 **A "where were we" note** — tomorrow's session reads it and picks up in under a minute
+- 🧠 **It knows when to stop** — same failure 3 times in a row? Instead of guessing, it rolls back to the last save and *asks you first*:
+
+```mermaid
+flowchart TD
+    A["Something fails"] --> B["Fix attempt 1"]
+    B --> C{"Working?"}
+    C -->|yes| D["Run everything · save ✓"]
+    C -->|"no — try 2"| E["New theory, fix again"]
+    E --> C
+    C -->|"STILL broken"| F["🛑 Roll back to last save"]
+    F --> G["Explain what it now believes<br>and ask you before retrying"]
+```
+
+## 🤥 Honest limitations (no lying allowed)
+
+- **The look gets copied** (pages, buttons, colors) — with **fake sample data** inside, like a movie set: looks real, nothing behind the walls
+- **The brain can't be read from a link** — a real database/logins/payments is Phase 2, only if you say so
+- **Don't ship someone else's logo or brand name** — neutral placeholders are used by default to keep you out of trouble
+- **No score, no "done"** — if the agent can't take screenshots, it says so and uses the closest check instead of pretending
+
+## 📦 Install
+
+**→ Full instructions for every agent: [INSTALL.md](INSTALL.md)**
+
+Quick version:
+
+| Your AI assistant | Put `SKILL.md` here |
 |---|---|
 | **OpenCode** | `~/.config/opencode/skills/clone-anything/` |
 | **Claude Code** | `~/.claude/skills/clone-anything/` |
-| **Cursor** | copy the text into `.cursor/rules/clone-anything.mdc` |
-| **Antigravity / Codex** | paste it into your `AGENTS.md` file |
-| **GitHub Copilot** | `.github/copilot-instructions.md` |
+| **Cursor** | `.cursor/rules/clone-anything.md` |
+| **Antigravity / Codex** | your `AGENTS.md` |
+| **Copilot** | `.github/copilot-instructions.md` |
 | **Windsurf** | `.windsurfrules` |
 
-Not sure? If your AI can read a text file you point it at — it works.
+Not listed? If your AI can read a file you point it at — it works.
 
-## Try it (just say one of these)
+## 👀 See it on paper
 
-- *"Clone this site: https://example.com"*
-- *"Rebuild this app — here are screenshots"*
-- *"Copy Stripe's homepage but make it purple"*
-- *"(mid-project) It's broken again / where were we?"* ← the rescue habits kick in
+Real filled-in examples of everything the skill produces:
 
-## What you end up with
+- [`examples/CLONE-SPEC.md`](examples/CLONE-SPEC.md) — the one-page plan
+- [`examples/FIDELITY.md`](examples/FIDELITY.md) — the report card
+- [`examples/COVERAGE.md`](examples/COVERAGE.md) — every page: done or visibly deferred
+- [`examples/PROGRESS.md`](examples/PROGRESS.md) — the "where were we" note
+
+## 📁 What you end up with
 
 ```
 your-project/
@@ -124,4 +161,4 @@ your-project/
 
 ## License
 
-MIT — copy it, fork it, remix it. That's the whole point. 🧬
+[MIT](LICENSE) — copy it, fork it, remix it. That's the whole point. 🧬

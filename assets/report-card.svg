@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Cascadia Code', 'Consolas', monospace">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c5cff"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="880" height="520" rx="16" fill="#0d1117"/>
+  <rect width="880" height="56" rx="16" fill="url(#hdr)"/>
+  <rect y="28" width="880" height="28" fill="url(#hdr)"/>
+  <circle cx="28" cy="28" r="7" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="52" cy="28" r="7" fill="#ffffff" fill-opacity="0.6"/>
+  <circle cx="76" cy="28" r="7" fill="#ffffff" fill-opacity="0.4"/>
+  <text x="440" y="35" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">FIDELITY REPORT — clone-of-launchpad</text>
+
+  <text x="32" y="92" font-size="14" fill="#9fb0c9">bar: 85% mean / 70% floor   ·   viewports: 1440×900 + 390×844   ·   method: SSIM diff</text>
+
+  <!-- rows -->
+  <g font-size="17">
+    <g transform="translate(32,116)">
+      <text x="0" y="24" fill="#e6edf3">/home</text>
+      <rect x="150" y="6" width="520" height="24" rx="6" fill="#161b22"/>
+      <rect x="150" y="6" width="489" height="24" rx="6" fill="#34d399" fill-opacity="0.85"/>
+      <text x="700" y="24" fill="#6ee7b7" font-weight="700">94%</text>
+      <text x="760" y="24" fill="#6ee7b7">✅</text>
+    </g>
+    <g transform="translate(32,164)">
+      <text x="0" y="24" fill="#e6edf3">/pricing</text>
+      <rect x="150" y="6" width="520" height="24" rx="6" fill="#161b22"/>
+      <rect x="150" y="6" width="452" height="24" rx="6" fill="#34d399" fill-opacity="0.85"/>
+      <text x="700" y="24" fill="#6ee7b7" font-weight="700">87%</text>
+      <text x="760" y="24" fill="#6ee7b7">✅</text>
+    </g>
+    <g transform="translate(32,212)">
+      <text x="0" y="24" fill="#e6edf3">/checkout</text>
+      <rect x="150" y="6" width="520" height="24" rx="6" fill="#161b22"/>
+      <rect x="150" y="6" width="426" height="24" rx="6" fill="#f59e0b" fill-opacity="0.85"/>
+      <text x="700" y="24" fill="#fcd34d" font-weight="700">82%</text>
+      <text x="760" y="24" fill="#fcd34d">⚠️</text>
+    </g>
+    <g transform="translate(32,260)">
+      <text x="0" y="24" fill="#e6edf3">/profile</text>
+      <rect x="150" y="6" width="520" height="24" rx="6" fill="#161b22"/>
+      <rect x="150" y="6" width="369" height="24" rx="6" fill="#f59e0b" fill-opacity="0.85"/>
+      <text x="700" y="24" fill="#fcd34d" font-weight="700">71%</text>
+      <text x="760" y="24" fill="#fcd34d">⚠️</text>
+    </g>
+  </g>
+
+  <line x1="32" y1="318" x2="848" y2="318" stroke="#21262d" stroke-width="1.5"/>
+
+  <g font-size="17">
+    <text x="32" y="352" fill="#9fb0c9">MEAN</text>
+    <text x="140" y="352" fill="#ffffff" font-weight="700">83.5%  ·  floor pass ✅  ·  coverage 5/5</text>
+  </g>
+
+  <!-- warnings -->
+  <g font-size="14">
+    <text x="32" y="392" fill="#fcd34d">⚠ /checkout — header spacing off (iterating)</text>
+    <text x="32" y="418" fill="#fcd34d">⚠ /profile — mobile source lacked ground truth</text>
+  </g>
+
+  <!-- footer -->
+  <rect x="32" y="444" width="816" height="48" rx="10" fill="#161b22"/>
+  <text x="48" y="474" font-size="15" fill="#6ee7b7" font-weight="700">No score, no “done”.</text>
+  <text x="240" y="474" font-size="15" fill="#9fb0c9">every number above came from a real screenshot diff</text>
+</svg>
